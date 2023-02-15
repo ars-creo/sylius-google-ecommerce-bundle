@@ -24,7 +24,7 @@
     },
 
     "require": {
-        "sylius/core": "^v1.11",
-        "twig/twig": "^1.6.5"
+        "sylius/core": "v1.11",
+        "twig/twig": "v3.5.1"
     }
 }
