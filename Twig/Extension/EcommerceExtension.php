@@ -28,7 +28,7 @@ class EcommerceExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('google_ecommerce_render', [$this->client, 'render'], ['is_safe' => ['html']]),
+            new \TwigFunction('google_ecommerce_render', [$this->client, 'render'], ['is_safe' => ['html']]),
             new \Twig_SimpleFunction(
                 'google_ecommerce_click',
                 [$this->client, 'renderClickHandler'],
