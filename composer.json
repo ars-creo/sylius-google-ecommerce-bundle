@@ -22,6 +22,7 @@
     "autoload": {
         "psr-4": { "Webburza\\Sylius\\GoogleEcommerceBundle\\": "" }
     },
+
     "require": {
         "sylius/core": "^v1.11",
         "twig/twig": "^1.6.5"
