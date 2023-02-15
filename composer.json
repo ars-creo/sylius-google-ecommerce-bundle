@@ -1,7 +1,7 @@
 {
     "name": "webburza/sylius-google-ecommerce-bundle",
     "description": "Sylius integration with Google's Enhanced E-Commerce tracking within Google Analytics",
-    "type": "symfony-bundle",
+    "type": "sylius-plugin",
     "license": "MIT",
     "keywords": [
         "web.burza",
@@ -20,7 +20,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Webburza\\Sylius\\GoogleEcommerceBundle\\": "" }
+        "psr-4": { "Webburza\\Sylius\\GoogleEcommerceBundle\\": "src/" }
     },
 
     "require": {
