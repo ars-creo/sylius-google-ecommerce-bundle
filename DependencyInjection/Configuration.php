@@ -17,8 +17,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('webburza_sylius_google_ecommerce');
+        $treeBuilder = new TreeBuilder('webburza_sylius_google_ecommerce');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
