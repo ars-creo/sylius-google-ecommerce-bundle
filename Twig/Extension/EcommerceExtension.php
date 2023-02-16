@@ -4,12 +4,14 @@ namespace Webburza\Sylius\GoogleEcommerceBundle\Twig\Extension;
 
 use Sylius\Component\Core\Model\OrderInterface as Order;
 use Sylius\Component\Core\Model\ProductVariantInterface as ProductVariant;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 use Webburza\Sylius\GoogleEcommerceBundle\Client;
 
 /**
  * Class EcommerceExtension.
  */
-class EcommerceExtension extends \Twig_Extension
+class EcommerceExtension extends AbstractExtension
 {
     /** @var Client */
     private $client;
@@ -28,21 +30,21 @@ class EcommerceExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \TwigFunction('google_ecommerce_render', [$this->client, 'render'], ['is_safe' => ['html']]),
-            new \Twig_SimpleFunction(
+            new TwigFunction('google_ecommerce_render', [$this->client, 'render'], ['is_safe' => ['html']]),
+            new TwigFunction(
                 'google_ecommerce_click',
                 [$this->client, 'renderClickHandler'],
                 ['is_safe' => ['html']]
             ),
-            new \Twig_SimpleFunction(
+            new TwigFunction(
                 'google_ecommerce_cart',
                 [$this->client, 'renderCartHandler'],
                 ['is_safe' => ['html']]
             ),
-            new \Twig_SimpleFunction('google_ecommerce_impression', [$this, 'addImpression']),
-            new \Twig_SimpleFunction('google_ecommerce_details', [$this, 'addDetailsImpression']),
-            new \Twig_SimpleFunction('google_ecommerce_checkout', [$this, 'addCheckoutAction']),
-            new \Twig_SimpleFunction('google_ecommerce_purchase', [$this, 'addPurchaseAction']),
+            new TwigFunction('google_ecommerce_impression', [$this, 'addImpression']),
+            new TwigFunction('google_ecommerce_details', [$this, 'addDetailsImpression']),
+            new TwigFunction('google_ecommerce_checkout', [$this, 'addCheckoutAction']),
+            new TwigFunction('google_ecommerce_purchase', [$this, 'addPurchaseAction']),
         ];
     }
 
